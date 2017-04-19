@@ -17,19 +17,19 @@
 </style>
 	<div>
 	<h1>CHOOSE YOUR HERO (Choose Han Solo)</h1>
-  <div class="han">
+  <div class="han character">
 		<img src="han.jpg">
     <h1 class="health">HP: 150</h1>
   </div>
-  <div class="ewok">
+  <div class="ewok character enemy1">
 		<img src="ewok.jpg">
     <h1>HP: 150</h1>
   </div>
-  <div class="three">
+  <div class="three character enemy1">
 		<img src="3-cpo.jpg">
     <h1>HP: 150</h1>
   </div>
-  <div class="emperor">
+  <div class="emperor character enemy1">
 		<img src="emperor.jpg">
     <h1>HP: 150</h1>
 	</div>
@@ -54,105 +54,7 @@
 
 <button class="button"> ATTACK </button>
 
-	<script>
-var operatorIsSet = false;
-var firstCharIsSet = false;
-var firstfighter = "";
-var enemylineup = "";
-var enemy = "";
-
-$(".number").on("click", function() {
-    firstCharIsSet = true;
-    if(!operatorIsSet) {
-        firstfighter += $(this).val();
-        var value = $(this).val();
-        $("#first-number").append(value);
-    } else if(operatorIsSet) {
-        enemylineup += $(this).val();
-        var value = $(this).val();
-        $("#second-number").append(value); 
-        }else {       
-        return true;
-    }
-});
-
-
-// Han
-$( ".han" ).click(function() {
-  $( ".han" ).appendTo(".hero")
-  $( ".han" ).css("border", "green solid 5px")
-  $(".ewok").appendTo(".fighter")
-  $( ".ewok" ).css("border", "red solid 5px")
-  $(".three").appendTo(".fighter")
-  $( ".three" ).css("border", "red solid 5px")
-  $(".emperor").appendTo(".fighter")
-  $( ".emperor" ).css("border", "red solid 5px")
-  var han = firstfighter;
-
-  $(".ewok").click(function(){
-    $(".ewok").appendTo(".enemy")
-    $( ".han" ).appendTo(".hero")
-    $( ".han" ).css("border", "green solid 5px")
-  })
-
-  $(".three").click(function(){
-    $(".three").appendTo(".enemy")
-    $( ".han" ).appendTo(".hero")
-    $( ".han" ).css("border", "green solid 5px")
-  })
-
-  $(".emperor").click(function(){
-    $(".emperor").appendTo(".enemy")
-    $( ".han" ).appendTo(".hero")
-    $( ".han" ).css("border", "green solid 5px")
-  })
-
-});
-
-// Ewok
-$( ".ewok" ).click(function() {
-  $( ".ewok" ).appendTo(".hero")
-  $( ".ewok" ).css("border", "green solid 5px")
-  $(".han").appendTo(".fighter")
-  $( ".han" ).css("border", "red solid 5px")
-  $(".three").appendTo(".fighter")
-  $( ".three" ).css("border", "red solid 5px")
-  $(".emperor").appendTo(".fighter")
-  $( ".emperor" ).css("border", "red solid 5px")
-
-});
-
-// 3-cpo
-$( ".three" ).click(function() {
-  $( ".three" ).appendTo(".hero")
-  $( ".three" ).css("border", "green solid 5px")
-  $(".ewok").appendTo(".fighter")
-  $( ".ewok" ).css("border", "red solid 5px")
-  $(".han").appendTo(".fighter")
-  $( ".han" ).css("border", "red solid 5px")
-  $(".emperor").appendTo(".fighter")
-  $( ".emperor" ).css("border", "red solid 5px")
-});
-// emperor
-
-$( ".emperor" ).click(function() {
-  $( ".emperor" ).appendTo(".hero")
-  $( ".emperor" ).css("border", "green solid 5px")
-  $(".ewok").appendTo(".fighter")
-  $( ".ewok" ).css("border", "red solid 5px")
-  $(".three").appendTo(".fighter")
-  $( ".three" ).css("border", "red solid 5px")
-  $(".han").appendTo(".fighter")
-  $( ".han" ).css("border", "red solid 5px")
-});
-
-$(".button").on("click", function(){
-  $(".health").html("<p>HP : 0</p>")
-  alert("YOU'RE DEAD RIP")
-
-})
-	</script>
-
+<script src="main.js"></script>
 
 </body>
 </html>
